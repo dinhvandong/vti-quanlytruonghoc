@@ -2,6 +2,7 @@ package com.vti.quanlytruonghoc.controllers;
 
 
 import com.vti.quanlytruonghoc.models.Department;
+import com.vti.quanlytruonghoc.models.User;
 import com.vti.quanlytruonghoc.repositories.DepartmentRepository;
 import com.vti.quanlytruonghoc.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class DepartmentController {
     public Department insert(@RequestBody Department department)
     {
         return  departmentService.insert(department);
+    }
+
+    @PostMapping("/insertUser")
+    public Department insertUser(@RequestParam Integer departmentID, @RequestBody User user)
+    {
+        return  departmentService.insertUser(departmentID, user);
     }
 
 

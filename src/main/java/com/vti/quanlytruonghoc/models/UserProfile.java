@@ -1,5 +1,6 @@
 package com.vti.quanlytruonghoc.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,10 @@ public class UserProfile {
 
     private String address;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "userProfile")
+    // CO nghia la map voi Table User
+    // thong qua truong userProfile
     private User user;
 
     @Override

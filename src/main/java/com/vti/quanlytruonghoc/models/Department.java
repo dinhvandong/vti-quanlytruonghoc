@@ -1,11 +1,15 @@
 package com.vti.quanlytruonghoc.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,8 +25,10 @@ public class Department {
     private String name;
     private String desc;
 
-    public Department(String name, String desc) {
-        this.name = name;
-        this.desc = desc;
-    }
+    @JsonIgnore
+@OneToMany(mappedBy = "department",
+        cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+private Set<User> users = new HashSet<>();
+
+
 }

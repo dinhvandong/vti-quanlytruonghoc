@@ -34,7 +34,12 @@ public class UserController {
     {
         return  userService.insertProfile(userID, profile);
     }
-
+    @PostMapping("/insertDepartment")
+    public User insert(@RequestParam Long userID,
+                       @RequestParam Integer departmentID)
+    {
+        return  userService.insertDepartment(userID, departmentID);
+    }
 
     @PostMapping("/update")
     public User update(@RequestBody User user){

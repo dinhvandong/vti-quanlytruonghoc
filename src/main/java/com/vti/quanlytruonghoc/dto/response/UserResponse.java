@@ -1,5 +1,6 @@
 package com.vti.quanlytruonghoc.dto.response;
 
+import com.vti.quanlytruonghoc.models.Department;
 import com.vti.quanlytruonghoc.models.User;
 import com.vti.quanlytruonghoc.models.UserProfile;
 import lombok.AllArgsConstructor;
@@ -14,4 +15,6 @@ import lombok.Setter;
 public class UserResponse {
     private User user;
     private UserProfile userProfile;
+
+//    private Department department;
 }
