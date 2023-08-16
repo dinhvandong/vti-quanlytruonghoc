@@ -58,7 +58,7 @@ public class UserService {
             User userFound = optionalUser.get();
             // optionalUser.get la lay ve doi tuong tim duoc
             Department departmentFound = optionalDepartment.get();
-            userFound.setDepartment(departmentFound);
+           // userFound.setDepartment(departmentFound);
             //departmentFound.getUsers().add(userFound);
            // departmentRepository.save(departmentFound);
             return userRepository.save(userFound);
